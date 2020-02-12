@@ -1,26 +1,35 @@
-/**
-*.h file:
-*/
+// Header for database class
 
 #ifndef DATABASE_H
 #define DATABASE_H
 
-//any includes here
-
 #include <iostream>
 #include <string>
 #include <vector>
+#include <cstdlib>
+
 namespace LCKMAT002{
 
-    std::vector<StudentRecord> StudentRecordDatabase;
+    class database{
+        
+        private:
 
-    struct StudentRecord {
-        std::string Name;
-        std::string Surname;
-        std::string StudentNumber;
-        std::string ClassRecord;
-    }; 
+            struct StudentRecord {
+                std::string Name;
+                std::string Surname;
+                std::string StudentNumber;
+                std::string ClassRecord;
+            }; 
 
+            std::vector<StudentRecord> StudentRecordDatabase;   
+
+        public:
+            
+            void add_student(std::string Name, std::string Surname, std::string StudentNumber, std::string ClassRecord);
+
+    };  
+
+    
     
 }
 
