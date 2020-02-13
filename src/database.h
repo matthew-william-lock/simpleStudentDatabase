@@ -28,12 +28,12 @@ namespace LCKMAT002{
         public:
             
             bool add_student(const std::string & Name, const std::string & Surname, const std::string & StudentNumber, const std::string & ClassRecord);
+            bool display_student(const std::string & StudentNumber);
             bool save_database(const std::string & filename );
             bool read_database(const std::string & filename );
 
             bool check_is_not_duplicate(const std::string & StudentNumber);
 
-            int get_size();
 
     };  
 

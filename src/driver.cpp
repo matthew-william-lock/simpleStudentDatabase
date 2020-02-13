@@ -35,6 +35,24 @@ int add_student(){
 
 }
 
+int display_student_data(){
+
+    using namespace std;
+    std::string studentNo;
+
+    promptStudentIdentificationInput();
+    cin>>studentNo;
+
+    if (studentDatabase.display_student(studentNo))
+    {
+        string temp;
+        cout<<"...\nType anything and hit enter to continue ";
+        std::cin>>temp;
+        return true;
+    }  
+    return false;
+}
+
 int save_the_database(){
 
     using namespace std;
@@ -116,6 +134,14 @@ int main(void)
             while (!result)
             {
                 result = save_the_database();
+            }               
+        }
+        else if (selection=="4")
+        {
+            bool result = display_student_data();
+            while (!result)
+            {
+                result = display_student_data();
             }               
         }
         

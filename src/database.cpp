@@ -42,7 +42,7 @@ bool LCKMAT002::database::read_database(const std::string & filename)
     std::ifstream in(filename);
     if (!in)
     {
-        cout<<FILEOUTPUTEORR;
+        cout<<FILENOUTFOUNDOUTPUTEORR;
         return false; 
     }
 
@@ -85,9 +85,25 @@ bool LCKMAT002::database::add_student(const std::string & Name, const std::strin
 
 };
 
-int LCKMAT002::database::get_size()
-{
-    studentRecordDatabase.size();
+bool LCKMAT002::database::display_student(const std::string & StudentNumber){
+
+    clearDisplay(); // Clear UI
+
+    for(std::size_t i=0; i<studentRecordDatabase.size(); ++i)
+    {
+        if (studentRecordDatabase.at(i).StudentNumber==StudentNumber) 
+        {
+            cout<<"Student name: \t\t"<<studentRecordDatabase.at(i).Name<<"\n";
+            cout<<"Student surname: \t"<<studentRecordDatabase.at(i).Surname<<"\n";
+            cout<<"Student number: \t"<<studentRecordDatabase.at(i).StudentNumber<<"\n";
+            cout<<"Class record: \t\t"<<studentRecordDatabase.at(i).ClassRecord<<"\n";
+
+            return true;        
+        }        
+    }
+    cout<<NOMATCHERROR;
+    return false;
+
 };
 
 
