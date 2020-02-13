@@ -9,6 +9,7 @@
 #include <string>
 #include <vector>
 #include <cstdlib>
+#include <bits/stdc++.h> 
 
 namespace LCKMAT002{
 
@@ -31,7 +32,7 @@ namespace LCKMAT002{
             bool display_student(const std::string & StudentNumber);
             bool save_database(const std::string & filename );
             bool read_database(const std::string & filename );
-
+            bool grade_student(const std::string & StudentNumber);
             bool check_is_not_duplicate(const std::string & StudentNumber);
 
 

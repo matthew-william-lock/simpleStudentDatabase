@@ -106,5 +106,51 @@ bool LCKMAT002::database::display_student(const std::string & StudentNumber){
 
 };
 
+bool LCKMAT002::database::grade_student(const std::string & StudentNumber){
+
+    clearDisplay(); // Clear UI
+
+    for(std::size_t i=0; i<studentRecordDatabase.size(); ++i)
+    {
+        if (studentRecordDatabase.at(i).StudentNumber==StudentNumber) 
+        {
+            string classRecord =studentRecordDatabase.at(i).ClassRecord;
+            cout<<"Class record: \t\t"<<classRecord<<"\n";
+
+            if (classRecord.find(" "))
+            {
+                float total=0;
+                int counter=0;
+
+                std::istringstream token(classRecord);            
+                while (token)
+                {
+                    std::string grade;
+                    std::getline(token,grade,' ');
+                    if (grade!="")
+                    {
+                        float val = std::stof(grade);
+                        counter++;
+                        total+=val; 
+                    }
+                                         
+                }
+                float average = total/counter;
+                cout<<"Average mark: \t\t"<<average<<"\n";
+                return true;  
+            }
+            else{
+                cout<<"Average mark: \t\t"<<classRecord<<"\n";
+            }
+            
+
+                 
+        }   
+    }
+    cout<<NOMATCHERROR;
+    return false;
+
+};
+
 
 

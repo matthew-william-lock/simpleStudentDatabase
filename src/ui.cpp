@@ -46,6 +46,9 @@ void LCKMAT002::promptFilenameOutput(){
 void LCKMAT002::promptStudentIdentificationInput(){
     cout << STUDENTIDENTIFICATIONINPUTPROMPT;
 };
+void LCKMAT002::promptStudentIdentificationForGradesInput(){
+    cout << STUDENTIDENTIFICATIONGRADESINPUTPROMPT;
+};
 
 bool LCKMAT002::initiateQuery(std::string selection){
 

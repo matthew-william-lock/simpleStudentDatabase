@@ -25,7 +25,8 @@ int add_student(){
     cin>>studentNo;
 
     promptClassRecordInput();
-    cin>>classRecord;
+    cin.ignore();
+    std::getline(cin,classRecord);
 
     if (studentDatabase.add_student(name,surname,studentNo,classRecord))
     {
@@ -44,6 +45,24 @@ int display_student_data(){
     cin>>studentNo;
 
     if (studentDatabase.display_student(studentNo))
+    {
+        string temp;
+        cout<<"...\nType anything and hit enter to continue ";
+        std::cin>>temp;
+        return true;
+    }  
+    return false;
+}
+
+int display_student_grades(){
+
+    using namespace std;
+    std::string studentNo;
+
+    promptStudentIdentificationForGradesInput();
+    cin>>studentNo;
+
+    if (studentDatabase.grade_student(studentNo))
     {
         string temp;
         cout<<"...\nType anything and hit enter to continue ";
@@ -142,6 +161,14 @@ int main(void)
             while (!result)
             {
                 result = display_student_data();
+            }               
+        }
+        else if (selection=="5")
+        {
+            bool result = display_student_grades();
+            while (!result)
+            {
+                result = display_student_grades();
             }               
         }
         

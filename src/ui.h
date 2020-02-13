@@ -15,6 +15,7 @@ namespace LCKMAT002{
     const std::string DATABASEFILENAMEINPUT="2. Read database\n\nEnter filename for database to be read from: ";
     const std::string FILENAMEINPUTPROMPT="3. Save database\n\nEnter filename for database to be saved to: ";  
     const std::string STUDENTIDENTIFICATIONINPUTPROMPT="4. Display given student data\n\nEnter student number: ";  
+    const std::string STUDENTIDENTIFICATIONGRADESINPUTPROMPT="5. Grade student\n\nEnter student number: "; 
     const std::string SURNAMEINPUTPROMPT="Enter student surname: "; 
     const std::string STUDENTNOINPUTPROMPT="Enter student number: "; 
     const std::string CLASSRECORDINPUTPROMPT="Enter student class record: "; 
@@ -39,6 +40,7 @@ namespace LCKMAT002{
     void promptFilenameInput();
     void promptFilenameOutput();
     void promptStudentIdentificationInput();
+    void promptStudentIdentificationForGradesInput();
     
     bool initiateQuery(std::string selection);
 
