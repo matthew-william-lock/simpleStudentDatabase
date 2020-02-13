@@ -4,14 +4,16 @@
 using namespace std;
 using namespace LCKMAT002;
 
-void LCKMAT002::displaySplash(){
-    system("clear"); 
-    cout << SPLASHTEXT;
-};
 
 void LCKMAT002::clearDisplay(){
     system("clear"); 
 }
+
+void LCKMAT002::displaySplash(){
+    clearDisplay();
+    cout << SPLASHTEXT;
+};
+
 
 void LCKMAT002::promptSelectInput(){
     cout << SELECTIONINPUTPROMPT;
@@ -33,10 +35,18 @@ void LCKMAT002::promptClassRecordInput(){
     cout << CLASSRECORDINPUTPROMPT;
 };
 
+void LCKMAT002::promptFilenameInput(){
+    cout << FILENAMEINPUTPROMPT;
+};
+
+void LCKMAT002::promptFilenameOutput(){
+    cout << DATABASEFILENAMEINPUT;
+};
+
 bool LCKMAT002::initiateQuery(std::string selection){
 
     
-    if (selection=="1") return true;
+    if (selection=="1" || selection=="2"|| selection=="3") return true;
     else return false;
     
 };

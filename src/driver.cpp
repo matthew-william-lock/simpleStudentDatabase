@@ -32,8 +32,44 @@ int add_student(){
         return true;
     }   
     return false;
+
 }
 
+int save_the_database(){
+
+    using namespace std;
+
+    std::string filename;
+
+    promptFilenameInput();
+    cin>>filename;
+
+
+    if (studentDatabase.save_database(filename))
+    {
+        return true;
+    }   
+    return false;
+
+}
+
+int open_the_database(){
+
+    using namespace std;
+
+    std::string filename;
+
+    promptFilenameOutput();
+    cin>>filename;
+
+
+    if (studentDatabase.read_database(filename))
+    {
+        return true;
+    }   
+    return false;
+
+}
 
 int main(void)
 { 
@@ -64,9 +100,25 @@ int main(void)
             while (!result)
             {
                 result = add_student();
-            }
-            
+            }            
         }
+        else if (selection=="2")
+        {
+            bool result = open_the_database();
+            while (!result)
+            {
+                result = open_the_database();
+            }               
+        }
+        else if (selection=="3")
+        {
+            bool result = save_the_database();
+            while (!result)
+            {
+                result = save_the_database();
+            }               
+        }
+        
        
         
 
