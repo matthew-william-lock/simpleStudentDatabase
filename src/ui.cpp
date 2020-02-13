@@ -1,44 +1,42 @@
 #include "ui.h"
 #include "database.h"
 
-using namespace LCKMAT002;
 using namespace std;
+using namespace LCKMAT002;
 
 void LCKMAT002::displaySplash(){
     system("clear"); 
     cout << SPLASHTEXT;
 };
 
+void LCKMAT002::clearDisplay(){
+    system("clear"); 
+}
+
 void LCKMAT002::promptSelectInput(){
     cout << SELECTIONINPUTPROMPT;
 };
 
-bool LCKMAT002::initiateQuery(int selection){
+void LCKMAT002::promptNameInput(){
+    cout << NAMEINPUTPROMPT;
+};
+
+void LCKMAT002::promptSurnameInput(){
+    cout << SURNAMEINPUTPROMPT;
+};
+
+void LCKMAT002::promptStudentNoInput(){
+    cout << STUDENTNOINPUTPROMPT;
+};
+
+void LCKMAT002::promptClassRecordInput(){
+    cout << CLASSRECORDINPUTPROMPT;
+};
+
+bool LCKMAT002::initiateQuery(std::string selection){
 
     
-    switch(selection) {
-      case 1:
-        return true;
-        break;
-
-      case 2: 
-
-        break;
-
-      case 3: 
-        break;
-
-      case 4:
-
-        break;
-
-      case 5: 
-
-        break;
-
-      default: 
-        return false;
-        break;
-
-   }
+    if (selection=="1") return true;
+    else return false;
+    
 };

@@ -21,11 +21,15 @@ namespace LCKMAT002{
                 std::string ClassRecord;
             }; 
 
-            std::vector<StudentRecord> StudentRecordDatabase;   
+            std::vector<StudentRecord> studentRecordDatabase;   
 
         public:
             
-            void add_student(std::string Name, std::string Surname, std::string StudentNumber, std::string ClassRecord);
+            bool add_student(std::string Name, std::string Surname, std::string StudentNumber, std::string ClassRecord);
+
+            bool check_is_not_duplicate(std::string StudentNumber);
+
+            int get_size();
 
     };  
 
