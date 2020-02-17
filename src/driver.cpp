@@ -171,6 +171,8 @@ int main(void)
                 result = display_student_grades();
             }               
         }
+
+        else if(selection=="q") exit(0);
         
        
         

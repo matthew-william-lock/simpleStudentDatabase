@@ -53,7 +53,7 @@ void LCKMAT002::promptStudentIdentificationForGradesInput(){
 bool LCKMAT002::initiateQuery(std::string selection){
 
     
-    if (selection=="1" || selection=="2"|| selection=="3"|| selection=="4"|| selection=="5") return true;
+    if (selection=="1" || selection=="2"|| selection=="3"|| selection=="4"|| selection=="5" || selection=="q") return true;
     else return false;
     
 };
