@@ -11,5 +11,6 @@ make
 
 2. Run the program
 ```
+cd src
 make run
 ```
